@@ -1,0 +1,32 @@
+#card{
+    width: 400px;
+    height: 550px;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden; 
+}
+#image{
+    width: 400px;
+    height: 300px;
+
+}
+#black{
+    width: 400px;
+    height: 100px;
+    background-color: black;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+#twiter{
+    height: 20px;
+}
+#center{
+    display: flex;
+    justify-content: center;
+}
