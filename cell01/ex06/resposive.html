@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th {
+            height: 400px;
+            text-align: left;
+        }
+        #tete{
+            background-color: blueviolet;
+        }
+        #toto {
+            background-color: red;
+        }
+        @media (max-width: 768px) {
+            table, tbody, tr, th {
+                display: block;
+                width: 100%;
+            }
+            th {
+                width: 768px;
+                height: auto;
+                min-height: 400px;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th id="toto">totot</th>
+                <th id="tete">tette</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>
