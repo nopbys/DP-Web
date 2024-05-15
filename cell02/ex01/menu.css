@@ -1,0 +1,19 @@
+#drink{
+    background-color: aqua;
+}
+#sadwich{
+    background-color: aquamarine;
+}
+#rice{
+    background-color: azure;
+}
+#middle{
+    text-align: center;
+    
+}
+select{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: bisque;
+}
