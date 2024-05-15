@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+}
+th {
+    height: 400px;
+    text-align: left;
+}
+#tete{
+    background-color: blueviolet;
+}
+#toto {
+    background-color: red;
+}
+@media (max-width: 768px) {
+    table, tbody, tr, th {
+        display: block;
+        width: 100%;
+    }
+    th {
+        width: 768px;
+        height: auto;
+        min-height: 400px;
+        box-sizing: border-box;
+    }
+}
