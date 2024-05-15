@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="backgroound.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bg</title>
+</head>
+<body>
+    <button value="changebg" onclick="changebg()">change BG</button>
+    <script>
+        let a =1;
+        function changebg(){
+            if(a==1){
+                document.body.style.backgroundColor = "red";
+                a++
+            }
+            else{
+                document.body.style.backgroundColor = "green";
+                a=1;
+            }
+       
+        
+        }
+    </script>
+</body>
+</html>

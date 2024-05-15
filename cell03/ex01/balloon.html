@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="baloon.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>balloon</title>
+</head>
+<body>
+    <div style="display: flex;justify-content: center;">
+    <div id="main" onclick="bigger()" onmouseover="smaller()">
+    </div>
+</div>
+    <script>
+        let start = 0;
+        function bigger(){
+            
+            var main = document.getElementById('main');
+            var currentWidth = main.offsetWidth; 
+            var currentHeight = main.offsetHeight; 
+            main.style.width = (currentWidth + 10) + 'px'; 
+            main.style.height = (currentHeight + 10) + 'px';
+            if(start==0){
+                main.style.backgroundColor ='red';
+                start++;
+            }
+            else if(start==1){
+                main.style.backgroundColor ='green';
+                start++;
+            }
+            else if(start==2){
+                main.style.backgroundColor ='blue';
+                start=0;
+            }
+            if(currentWidth>=420){
+                main.style.width = '200px'; 
+                main.style.height = '200px';
+            }
+            
+        }
+        function smaller(){
+            var main = document.getElementById('main');
+            var currentWidth = main.offsetWidth; 
+            var currentHeight = main.offsetHeight; 
+
+            if(currentHeight<=200){
+                return;
+            }
+            else if(currentHeight>200){
+                main.style.width = (currentWidth - 5) + 'px'; 
+                main.style.height = (currentHeight -5) + 'px';
+                if(start==0){
+                main.style.backgroundColor ='red';
+                start=2;
+            }
+            else if(start==1){
+                main.style.backgroundColor ='green';
+                start--;
+            }
+            else if(start==2){
+                main.style.backgroundColor ='blue';
+                start--;
+            }
+            }
+            
+        }
+    </script>
+</body>
+</html>
