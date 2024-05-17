@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal</title>
+</head>
+<body>
+    <div style="display: flexbox;">
+        <input type="number" style="width: 50px;" id="firstn">
+        <select id="metho">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" style="width: 50px;" id="secondn">
+        <button onclick="calculate()">Try ME</button>        
+        <script>
+        function calculate(){
+            let panal = document.getElementById('anspanal');
+            let firstnum = parseFloat(document.getElementById('firstn').value);
+            let middle = document.getElementById('metho').value;
+            let second = parseFloat(document.getElementById('secondn').value);
+            let ans;
+            if(firstnum < 0){
+                alert('error');
+                return;
+            }
+            if(second < 0){
+                alert('error');
+                return;
+            }
+
+            if(middle == "+"){
+                ans = firstnum + second;
+            }
+            else if(middle == "-"){
+                ans = firstnum - second;
+            }
+            else if(middle == "*"){
+                ans = firstnum * second;
+            }
+            else if(middle == "/"){
+                if(second ==0){
+                    ans = 'It over 9000';
+                }
+                else{
+                    ans = firstnum / second;
+                }
+            }
+            else if(middle == "%"){
+                if(second ==0){
+                    ans = 'It over 9000';
+                }
+                else{
+                    ans = firstnum / second;
+                }
+            }
+            console.log (ans);
+            let p = document.createElement('p');
+            let hr = document.createElement('hr');
+            hr.style.border='2px solid black';
+            hr.style.borderRadius='2px';
+            p.innerHTML = ans;
+            panal.appendChild(p);
+            panal.appendChild(hr);
+
+            
+        }
+        setInterval(function() {
+            alert('Please, use me...');
+        }, 30000);
+        
+    </script>
+        </script>
+    </div>
+    <br>
+    <div id="anspanal">
+        
+    </div>
+</body>
+</html>
