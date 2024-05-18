@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div style="display: flexbox;">
+        <input type="number" style="width: 50px;" id="firstn">
+        <select id="metho">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" style="width: 50px;" id="secondn">
+        <button id="calculate">Try ME</button>        
+        <script>
+        function calculate(){
+            let panal = $('#anspanal');
+            let firstnum = parseFloat($('#firstn').val());
+            let middle = $('#metho').val();
+            let second = parseFloat($('#secondn').val());
+            let ans;
+            
+            if(firstnum < 0 || second < 0){
+                alert('error');
+                return;
+            }
+
+            switch(middle) {
+                case '+':
+                    ans = firstnum + second;
+                    break;
+                case '-':
+                    ans = firstnum - second;
+                    break;
+                case '*':
+                    ans = firstnum * second;
+                    break;
+                case '/':
+                    ans = second === 0 ? 'It over 9000' : firstnum / second;
+                    break;
+                case '%':
+                    ans = second === 0 ? 'It over 9000' : firstnum % second;
+                    break;
+            }
+            
+            console.log(ans);
+            let p = $('<p></p>').text(ans);
+            let hr = $('<hr>').css({
+                border: '2px solid black',
+                borderRadius: '2px'
+            });
+            panal.append(p, hr);
+        }
+
+        $(document).ready(function() {
+            $('#calculate').click(calculate);
+
+            setInterval(function() {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+    </div>
+    <br>
+    <div id="anspanal">
+    </div>
+</body>
+</html>
