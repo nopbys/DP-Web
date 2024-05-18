@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="backgroound.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bg</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="changebg">change BG</button>
+    <script>
+        let a = 1;
+        $(document).ready(function() {
+            $("#changebg").click(function() {
+                if (a == 1) {
+                    $("body").css("background-color", "red");
+                    a++;
+                } else {
+                    $("body").css("background-color", "green");
+                    a = 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

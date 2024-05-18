@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="baloon.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>balloon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div style="display: flex; justify-content: center;">
+        <div id="main"></div>
+    </div>
+    <script>
+        let start = 0;
+
+        function bigger() {
+            var main = $("#main");
+            var currentWidth = main.width();
+            var currentHeight = main.height();
+            main.width(currentWidth + 10);
+            main.height(currentHeight + 10);
+
+            if (start == 0) {
+                main.css("background-color", "red");
+                start++;
+            } else if (start == 1) {
+                main.css("background-color", "green");
+                start++;
+            } else if (start == 2) {
+                main.css("background-color", "blue");
+                start = 0;
+            }
+
+            if (currentWidth >= 420) {
+                main.width(200);
+                main.height(200);
+            }
+        }
+
+        function smaller() {
+            var main = $("#main");
+            var currentWidth = main.width();
+            var currentHeight = main.height();
+
+            if (currentHeight <= 200) {
+                return;
+            } else {
+                main.width(currentWidth - 5);
+                main.height(currentHeight - 5);
+
+                if (start == 0) {
+                    main.css("background-color", "red");
+                    start = 2;
+                } else if (start == 1) {
+                    main.css("background-color", "green");
+                    start--;
+                } else if (start == 2) {
+                    main.css("background-color", "blue");
+                    start--;
+                }
+            }
+        }
+
+        $(document).ready(function() {
+            $("#main").on("click", bigger);
+            $("#main").on("mouseover", smaller);
+        });
+    </script>
+</body>
+</html>
