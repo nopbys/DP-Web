@@ -10,18 +10,12 @@
 <body>
     <button id="changebg">change BG</button>
     <script>
-        let a = 1;
         $(document).ready(function() {
             $("#changebg").click(function() {
-                if (a == 1) {
-                    $("body").css("background-color", "red");
-                    a++;
-                } else {
-                    $("body").css("background-color", "green");
-                    a = 1;
-                }
-            });
+                const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            $('body').css('background-color', randomColor);
         });
+    });
     </script>
 </body>
 </html>
