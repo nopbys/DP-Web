@@ -8,7 +8,7 @@
 </head>
 <body>
     <div style="display: flexbox;">
-        <input type="number" style="width: 50px;" id="firstn">
+        <input type="text" style="width: 50px;" id="firstn">
         <select id="metho">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -16,7 +16,7 @@
             <option value="/">/</option>
             <option value="%">%</option>
         </select>
-        <input type="number" style="width: 50px;" id="secondn">
+        <input type="text" style="width: 50px;" id="secondn">
         <button id="calculate">Try ME</button>        
         <script>
         function calculate(){
@@ -25,7 +25,22 @@
             let middle = $('#metho').val();
             let second = parseFloat($('#secondn').val());
             let ans;
-            
+            let one = $('#firstn').val();
+            let two = $('#secondn').val();
+            for (let i = 0; i < one.length; i++) {
+                    if (!/[0-9]/.test(one[i])) {
+                        console.log('Error :(');
+                        alert("Error :(");
+                        return;
+                    }
+                }
+            for (let i = 0; i < two.length; i++) {
+                    if (!/[0-9]/.test(two[i])) {
+                        console.log('Error :(');
+                        alert("Error :(");
+                        return;
+                    }
+                }
             if(firstnum < 0 || second < 0){
                 alert('error');
                 return;
